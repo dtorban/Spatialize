@@ -7,7 +7,7 @@
  */
 
 #include <SpatializeApp.h>
-#include "example/ExampleCube.h"
+#include "VRModel.h"
 #include "MVRCore/StringUtils.H"
 
 using namespace MinVR;
@@ -116,7 +116,7 @@ void SpatializeApp::initializeContextSpecificVars(int threadId,
 void SpatializeApp::initVBO(int threadId)
 {
     _mutex.lock();
-	_scene[threadId] = SceneRef(new ExampleCube());
+	_scene[threadId] = SceneRef(new VRModel("C:\\Users\\Chris\\Downloads\\Nanosuit"));
     _mutex.unlock();
 }
 
@@ -185,7 +185,9 @@ void SpatializeApp::drawGraphics(int threadId, MinVR::AbstractCameraRef camera,
 
 	camera->setObjectToWorldMatrix(scale);
 
-	_scene[threadId]->draw(_time, camera, window);
+	Shader shader("C:\\Users\\Chris\\Downloads\\Nanosuit\\shit\\shader.vs", "C:\\Users\\Chris\\Downloads\\Nanosuit\\shit\\shader.frag");
+
+	_scene[threadId]->draw(_time, camera, window, shader);
 }
 
 }

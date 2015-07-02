@@ -17,6 +17,8 @@
 #include "MVRCore/Event.H"
 #include <GLFW/glfw3.h>
 
+#include <assimp/Importer.hpp>
+
 namespace Spatialize {
 
 ExampleCube::ExampleCube() {
@@ -147,10 +149,10 @@ void Spatialize::ExampleCube::draw(float time, MinVR::CameraRef camera,
 	glm::dmat4 translate = objectToWorld;
 	glm::dvec2 rotAngles(-20.0, 45.0);
 	glm::dmat4 rotate1 = glm::rotate(translate, rotAngles.y*time, glm::dvec3(0.0,1.0,0.0));
-	camera->setObjectToWorldMatrix(glm::rotate(rotate1, rotAngles.x*time, glm::dvec3(1.0,0,0)));
+	//camera->setObjectToWorldMatrix(glm::rotate(rotate1, rotAngles.x*time, glm::dvec3(1.0,0,0)));
 
 	glDrawArrays(GL_TRIANGLES, 0, 36);
-
+	
     glDisableClientState(GL_VERTEX_ARRAY);  // disable vertex arrays
     glDisableClientState(GL_COLOR_ARRAY);
     glDisableClientState(GL_NORMAL_ARRAY);
@@ -158,5 +160,5 @@ void Spatialize::ExampleCube::draw(float time, MinVR::CameraRef camera,
     glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
 
     camera->setObjectToWorldMatrix(objectToWorld);
-
+	
 }

@@ -31,12 +31,15 @@ set (SOURCEFILES
 		spatialize/source/main.cpp
 		spatialize/source/SpatializeApp.cpp
 		spatialize/source/example/ExampleCube.cpp
-		spatialize/source/Box.cpp)
+		spatialize/source/Box.cpp
+		spatialize/source/VRModel.cpp)
 set (HEADERFILES 
 		spatialize/include/SpatializeApp.h
 		spatialize/include/Scene.h
 		spatialize/include/example/ExampleCube.h
-		spatialize/include/Box.h)
+		spatialize/include/Box.h
+		spatialize/include/VRModel.h
+		spatialize/include/Mesh.h)
 source_group("Header Files" FILES ${HEADERFILES})
 
 ############################################################
