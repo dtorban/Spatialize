@@ -184,7 +184,11 @@ if(MSVC)
 else()
 	set(ASSIMP_LIBRARY ${assimp_INSTALL_DIR}/lib/libassimp.a CACHE INTERNAL "assimp lib file")
 endif()	
-set(LIBASSIMP_LIBRARIES optimized ${ASSIMP_LIBRARY})
+
+find_package(ZLIB)
+  
+set(LIBASSIMP_LIBRARIES ${ASSIMP_LIBRARY} ${ZLIB_LIBRARIES})
+#set(LIBASSIMP_LIBRARIES ${ASSIMP_LIBRARY})
 include_directories(${ASSIMP_INCLUDE_DIR})
 
 ############################################################
