@@ -48,7 +48,8 @@ set (HEADERFILES
 		spatialize/include/SOIL/image_helper.h
 		spatialize/include/SOIL/SOIL.h
 		spatialize/include/SOIL/stb_image_aug.h
-		spatialize/include/SOIL/stbi_DDS_aug.h)
+		spatialize/include/SOIL/stbi_DDS_aug.h
+		spatialize/include/SOIL/stbi_DDS_aug_c.h)
 source_group("Header Files" FILES ${HEADERFILES})
 
 ############################################################
