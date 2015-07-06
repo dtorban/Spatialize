@@ -33,14 +33,12 @@ namespace Spatialize {
 		vector<Texture> textures_loaded;
 		vector<Mesh> meshes;
 		std::string directory;
+		Box _boundingBox;
 
 		void loadModel(std::string path);
 		void processNode(aiNode *node, const aiScene *scene);
 		Mesh processMesh(aiMesh *mesh, const aiScene *scene);
 		vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, std::string typeName);
-
-		GLuint _vboId;
-		Box _boundingBox;
 	};
 
 

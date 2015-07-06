@@ -9,7 +9,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include "MVRCore/Event.H"
 #include <GLFW/glfw3.h>
-#include "SOIL.h"
+#include "SOIL/SOIL.h"
 
 namespace Spatialize {
 	GLint TextureFromFile(const char *path, std::string directory) {
@@ -36,6 +36,7 @@ namespace Spatialize {
 	
 	VRModel::VRModel(GLchar *path) {
 		this->loadModel(path);
+		_boundingBox = Box(glm::vec3(-glm::sqrt(2.0f)), glm::vec3(glm::sqrt(2.0f)));
 	}
 
 	void VRModel::processNode(aiNode *node, const aiScene *scene) {
@@ -142,5 +143,13 @@ namespace Spatialize {
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+	}
+
+	const Box& VRModel::getBoundingBox() {
+		return _boundingBox;
+	}
+
+	VRModel::~VRModel() {
+		
 	}
 }

@@ -32,14 +32,23 @@ set (SOURCEFILES
 		spatialize/source/SpatializeApp.cpp
 		spatialize/source/example/ExampleCube.cpp
 		spatialize/source/Box.cpp
-		spatialize/source/VRModel.cpp)
+		spatialize/source/VRModel.cpp
+		spatialize/include/SOIL/image_DXT.c
+		spatialize/include/SOIL/image_helper.c
+		spatialize/include/SOIL/SOIL.c
+		spatialize/include/SOIL/stb_image_aug.c)
 set (HEADERFILES 
 		spatialize/include/SpatializeApp.h
 		spatialize/include/Scene.h
 		spatialize/include/example/ExampleCube.h
 		spatialize/include/Box.h
 		spatialize/include/VRModel.h
-		spatialize/include/Mesh.h)
+		spatialize/include/Mesh.h
+		spatialize/include/SOIL/image_DXT.h
+		spatialize/include/SOIL/image_helper.h
+		spatialize/include/SOIL/SOIL.h
+		spatialize/include/SOIL/stb_image_aug.h
+		spatialize/include/SOIL/stbi_DDS_aug.h)
 source_group("Header Files" FILES ${HEADERFILES})
 
 ############################################################
