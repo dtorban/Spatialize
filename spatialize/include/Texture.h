@@ -39,6 +39,12 @@ public:
 		return get(0, 0, 0, index);
 	}
 
+	inline GLubyte& getDepthIndexValue(int imageIndex, int index)
+	{
+		return get(0, 0, imageIndex, index);
+	}
+
+
 	int getDepth() const {
 		return _depth;
 	}
